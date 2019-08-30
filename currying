@@ -1,0 +1,23 @@
+Currying is a technique of evaluating a function with multiple arguments, 
+into sequence of function with single/multiple argument. 
+As we simply add(2,3) into add(2)(3).
+
+Currying using closer :
+/*************************************
+var add = function(a){
+	var sum = a; 
+	return function addNext (b){
+		if(arguments.length){
+			sum += b;
+			return addNext;
+        }else{
+			    return sum;
+        }
+	}
+}
+
+add(2)(5)(2)(); // 9
+add(2)(5)(2)(7)(); // 16
+*************************************/
+
+
