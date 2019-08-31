@@ -1,0 +1,30 @@
+var set = {};
+    var validArr = arr.filter(function(val,index,arr){
+        return !parseInt(arr[index]);
+    })
+    
+    for(var i= 0; i<validArr.length;i++){
+        if(!parseInt(validArr[i])){
+            if(!set[validArr[i]]){
+                set[validArr[i]]=i.toString();
+            }else{
+                set[validArr[i]] += " "+ i.toString();
+            }       
+        }
+    }
+    //console.log(set);  { lebron: '0 3', lebron0: '1', lebron1: '2' }
+    var outPut = [];
+    for(var key in set){
+        var splitSet = set[key].split(" ");
+        var count = 0;
+        for(var k = 0; k<splitSet.length;k++){
+            if(k===0){
+                outPut[splitSet[k]] = key;
+            }else{
+                while(set[key + count]){
+                   count++;
+                }
+                outPut[splitSet[k]] = key + count++; 
+            }
+        }
+    }
