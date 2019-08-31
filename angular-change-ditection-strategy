@@ -1,0 +1,7 @@
+changeDetection: ChangeDetectionStrategy.OnPush
+changeDetection: ChangeDetectionStrategy.default
+
+ChangeDetectorRef.markForCheck() // incase of observable type input
+ChangeDetectorRef.detectChanges()
+ChangeDetectorRef.detach()
+ChangeDetectorRef.reattach()
